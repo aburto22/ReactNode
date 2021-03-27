@@ -7,13 +7,15 @@ import { DeleteProductButton } from "./components/DeleteProductButton";
 
 function App() {
   const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts();
+    if (products === null) {
+      getProducts();
+    }
   });
 
   const getProducts = () => {
+    console.log("getting products");
     productService.getAll().then((res) => setProducts(res));
   };
 

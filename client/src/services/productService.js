@@ -3,7 +3,7 @@ import axios from "axios";
 const productService = {
   getAll: async () => {
     try {
-      const res = await axios.get(`/api/product`);
+      let res = await axios.get(`/api/product`);
       return res.data || [];
     } catch (err) {
       console.error(err);

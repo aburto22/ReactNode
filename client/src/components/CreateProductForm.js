@@ -26,7 +26,6 @@ export const CreateProductForm = ({ updateProducts }) => {
         name: name,
         description: description,
       },
-      timeout: 1000,
     }).catch((err) => console.error(err));
 
     setName("");

@@ -20,11 +20,6 @@ app.use(express.json());
 
 app.use("/", productRoutes);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
 // Get prouction files created by React from client/build folder
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
